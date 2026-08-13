@@ -1,0 +1,9 @@
+R01: Las cuentas Zafiro permiten transferencias de hasta 7,350 créditos por día.
+R02: Las cuentas Rubí permiten transferencias de hasta 5,900 créditos por día.
+R03: Las cuentas Cobalto permiten transferencias de hasta 8,100 créditos por día.
+R12: Una cuenta Zafiro pasa al estado Helios después de 43 días de inactividad.
+R19: Una operación desde una cuenta Helios superior a 2,400 créditos requiere autorización Kappa-7.
+R22: Las operaciones Vector-9 deben registrar motivo, operador y evidencia de aprobación.
+R25: El protocolo Nébula exige doble validación para cambios de límites transaccionales.
+R31: Los incidentes de seguridad deben notificarse al equipo de cumplimiento dentro de 24 horas.
+R35: Soporte nunca debe solicitar claves, tokens ni códigos de autenticación al cliente.
