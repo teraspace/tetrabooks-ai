@@ -6,6 +6,7 @@ COPY src ./src
 COPY demo ./demo
 COPY demo_data ./demo_data
 COPY scripts ./scripts
+COPY corpus/raw ./corpus/raw
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir . \
     && pip install --no-cache-dir 'streamlit>=1.40,<2'
