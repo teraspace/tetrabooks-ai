@@ -54,6 +54,7 @@ def main():
         service.ingest(kb.id, "tetrabank_policies.txt", "text/plain", payload)
         print(kb.name)
 
+        combined_parts = []
         for name, filename, fallback_text in LITERARY_CORPUS:
             path = root.joinpath("corpus/raw", filename)
             kb = service.create_kb(name, f"Literary corpus document: {filename}")
@@ -63,7 +64,21 @@ def main():
                 payload = fallback_text.encode("utf-8")
             mime_type = "text/markdown" if filename.endswith(".md") else "text/plain"
             service.ingest(kb.id, filename, mime_type, payload)
+            combined_parts.append(f"## {name}\n{payload.decode('utf-8', errors='replace')}")
             print(kb.name)
+
+        combined_kb = service.create_kb(
+            "TetraBooks",
+            "Combined literary knowledge base for cross-work and comparative questions",
+        )
+        combined_payload = "\n\n".join(combined_parts).encode("utf-8")
+        service.ingest(
+            combined_kb.id,
+            "tetrabooks_combined.txt",
+            "text/plain",
+            combined_payload,
+        )
+        print(combined_kb.name)
 
 
 if __name__ == "__main__":
